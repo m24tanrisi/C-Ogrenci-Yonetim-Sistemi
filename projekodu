@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Ogrenci {
+    int no;
+    char ad[30];
+    float notu;
+};
+
+void ogrenciEkle(struct Ogrenci ogr[], int *sayac) {
+    printf("Ogrenci numarasi: ");
+    scanf("%d", &ogr[*sayac].no);
+
+    printf("Ogrenci adi: ");
+    scanf("%s", ogr[*sayac].ad);
+
+    printf("Ogrenci notu: ");
+    scanf("%f", &ogr[*sayac].notu);
+
+    (*sayac)++;
+}
+
+void ogrenciListele(struct Ogrenci ogr[], int sayac) {
+    if (sayac == 0) {
+        printf("Henuz ogrenci yok.\n");
+        return;
+    }
+
+    for (int i = 0; i < sayac; i++) {
+        printf("\nOgrenci %d\n", i + 1);
+        printf("No  : %d\n", ogr[i].no);
+        printf("Ad  : %s\n", ogr[i].ad);
+        printf("Not : %.2f\n", ogr[i].notu);
+    }
+} 
