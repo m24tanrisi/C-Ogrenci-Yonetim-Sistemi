@@ -32,4 +32,34 @@ void ogrenciListele(struct Ogrenci ogr[], int sayac) {
         printf("Ad  : %s\n", ogr[i].ad);
         printf("Not : %.2f\n", ogr[i].notu);
     }
-} 
+}
+
+int main() {
+    struct Ogrenci ogrenciler[100];
+    int sayac = 0;
+    int secim;
+
+    while (1) {
+        printf("\n1- Ogrenci Ekle");
+        printf("\n2- Ogrencileri Listele");
+        printf("\n3- Cikis");
+        printf("\nSeciminiz: ");
+        scanf("%d", &secim);
+
+        if (secim == 1) {
+            ogrenciEkle(ogrenciler, &sayac);
+        } 
+        else if (secim == 2) {
+            ogrenciListele(ogrenciler, sayac);
+        } 
+        else if (secim == 3) {
+            printf("Programdan cikiliyor...\n");
+            break;
+        } 
+        else {
+            printf("Hatali secim!\n");
+        }
+    }
+
+    return 0;
+}
